@@ -1,0 +1,12 @@
+// @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+.dashboard {
+    font-size: 16;
+    height: "100%";
+    // width: 100vw;
+    padding: .5em;
+    overflow-x: hidden !important;
+    .selectClass {
+        width: 6em;
+    }
+}

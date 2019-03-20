@@ -1,0 +1,88 @@
+<Card className={classes.card} square={true}>
+              <CardHeader
+                title={`${this.state.defaultSensor} sensor`}
+                subheader={`past ${this.state.defaultSensorDataTime} hours`}
+              />
+              <CardContent className={classes.cardContent} >
+              </CardContent>
+              <CardActions className={classes.actions} disableActionSpacing>
+                  <IconButton
+                  className={classnames(classes.expand, {
+                    [classes.expandOpen]: this.state.expanded,
+                  })}
+                  onClick={this.handleExpandClick}
+                  aria-expanded={this.state.expanded}
+                  aria-label="Show more"
+                >
+                <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Grid container justify="center">
+                    <Grid item md={8} xs={12}>
+                      <Grid container  alignContent={"center"} >
+                        <Grid item md={4} xs={6}>
+                          <form align='center' autoComplete="off">
+                            <FormControl className={classes.formControl}>
+                              <InputLabel htmlFor="selectSensor">Sensor Type</InputLabel>
+                              <Select
+
+                                className={classes.select}
+                                value={this.state.defaultSensor}
+                                onChange={this.handleChange}
+                                inputProps={{
+                                  name: 'defaultSensor',
+                                  id: 'selectSensor',
+                                }}
+                              >
+                                <MenuItem value="">
+                                  <em></em>
+                                </MenuItem>
+                                <MenuItem value={"Temperature"}>Temperature</MenuItem>
+                                <MenuItem value={"Humidity"}>Humidity</MenuItem>
+                                <MenuItem value={"PH"}>pH</MenuItem>
+                                <MenuItem value={"EC"}>EC</MenuItem>
+                              </Select>
+                            </FormControl>
+                          </form>
+                        </Grid>
+                        <Grid item md={4} xs={6}>
+                          <form align='center' autoComplete="off">
+                            <FormControl className={classes.formControl}>
+                              <InputLabel htmlFor="selectSensorTime">Data timespan</InputLabel>
+                              <Select
+                                className={classes.select}
+                                value={this.state.defaultSensorDataTime}
+                                onChange={this.handleChange}
+                                inputProps={{
+                                  name: 'defaultSensorDataTime',
+                                  id: 'selectSensorTime',
+                                }}
+                              >
+                                <MenuItem value="">
+                                  <em></em>
+                                </MenuItem>
+                                <MenuItem value={6}>6</MenuItem>
+                                <MenuItem value={12}>12</MenuItem>
+                                <MenuItem value={18}>18</MenuItem>
+                                <MenuItem value={24}>24</MenuItem>
+                                <MenuItem value={36}>36</MenuItem>
+                                <MenuItem value={48}>48</MenuItem>
+                                <MenuItem value={72}>72</MenuItem>
+                                <MenuItem value={0}>All</MenuItem>
+                              </Select>
+                            </FormControl>
+                          </form>
+                        </Grid>
+                        <Grid align='center' item md={4} xs={12}>
+                          <Button align='center' onClick={this.handleChangeFilterParams} size="large" color="primary" className={"classes.margin"}>
+                            Submit
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
