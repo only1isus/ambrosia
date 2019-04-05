@@ -19,8 +19,9 @@ const styles = theme => ({
       },
     },
     areaChart: {
-        padding: 0,
         margin: 0,
+        marginTop: theme.spacing.unit * 2,
+        padding: 0,
     },
     chartContainer: {
         height: "100%"
@@ -39,7 +40,7 @@ class Temperature extends Component {
                     <Tooltip  />
                     <ReferenceLine y={30} label="" stroke="red"/>
                     <Legend   />
-                    <Area type='monotone' name="Temperature" dataKey='value' color="#8aca8c" fill="#8aca8c" stroke='#8aca8c'  strokeWidth={2} />
+                    <Area type='monotone' name={this.props.title} dataKey='value' color="#8aca8c" fill="#8aca8c" stroke='#8aca8c'  strokeWidth={2} />
                 </AreaChart>
             </ResponsiveContainer>
         </Grid>

@@ -10,3 +10,55 @@
         width: 6em;
     }
 }
+
+.react-calender {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none !important;
+    .react-calendar__navigation{
+        .react-calendar__navigation__label{
+            font-family: 'Raleway', sans-serif;
+            font-size: 1em;
+            @media only screen and (max-width: 600px) {
+                font-size: 0.7em;
+                text-decoration: none !important;
+            }
+        }
+        .react-calendar__navigation__next2-button, .react-calendar__navigation__next-button, .react-calendar__navigation__prev-button, .react-calendar__navigation__prev2-button {
+            font-size: 1em;
+            min-width: 30px;
+            @media only screen and (max-width: 600px) {
+                min-width: 20px;
+            
+                font-size: .7em;
+            }
+        }
+    }
+    .react-calendar__month-view{ 
+        .react-calendar__month-view__weekdays {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.5em;
+            text-decoration: none !important;
+            @media only screen and (min-width: 600px) {
+                font-size: 0.7em;
+                text-decoration: none !important;
+            }
+        }
+        .react-calendar__month-view__days{
+            .react-calendar__tile {                
+                font-family: 'Raleway', sans-serif;
+                height: 40px;
+                width: 40px;
+            }
+            .react-calendar__tile--active {
+                background: #8aca8c;
+                color: white;
+            }
+            .react-calendar__tile--hasActive {
+                background: #8aca8c;
+            }
+        }
+    }
+}

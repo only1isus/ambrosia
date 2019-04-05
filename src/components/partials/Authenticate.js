@@ -5,8 +5,8 @@ var jwt = require('jsonwebtoken');
 var moment = require('moment');
 
 const instance = axios.create({
-    // baseURL: 'http://192.168.0.18:8080/',
-    baseURL: `http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/`,
+    baseURL: 'http://192.168.0.18:8080/',
+    // baseURL: `http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/`,
     headers: {
         'Content-type': 'application/json',
     }
